@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: bookmark_manager
+    ports:
+      - 5432:5432
+    networks:
+      - bookmarks_manager
+
+networks:
+  bookmarks_manager:
