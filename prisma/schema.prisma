@@ -18,6 +18,8 @@ model User {
   bookmarks Bookmark[]
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
+
+  @@map("users")
 }
 
 model Bookmark {
@@ -28,4 +30,6 @@ model Bookmark {
   User      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("bookmarks")
 }
